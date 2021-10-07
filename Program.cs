@@ -6,7 +6,8 @@ namespace bootcamp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var lab2 = new Lab2();
+            
         }
     }
 }
