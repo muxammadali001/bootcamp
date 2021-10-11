@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace bootcamp.Solutions
 {
@@ -252,22 +253,19 @@ namespace bootcamp.Solutions
 
             while(true)
             {
-                string[] N = Console.ReadLine().Split(' ');
-                int[] number = new int[N.Length];
-                for (int i = 0; i < N.Length; i++)
+                var numbers = Console.ReadLine()
+                .Split(' ', StringSplitOptions.RemoveEmptyEntries)
+                .Select(i => int.Parse(i))
+                .ToList();
+
+                foreach (var son in numbers)
                 {
-                    number[i] = Convert.ToInt32(N[i]);
+                    if(son <= 0) break;
+
+                    sum += son;
                 }
 
-                cnt ++;
-
-                if(number <= 0)
-                {
-                    System.Console.WriteLine($"{sum} {(sum / cnt + 1):F2} {cnt - 1}");
-                    break;
-                }
-                sum += number;
-            }
+                Console.WriteLine($"{sum}");
         }
 
         public void Problem14()

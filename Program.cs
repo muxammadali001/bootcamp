@@ -1,4 +1,5 @@
 ﻿using System;
+using bootcamp.Solutions;
 
 namespace bootcamp
 {
